@@ -3,109 +3,150 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>My First Page</title>
-		<meta name="description" content="A simple, accessible demo page" />
+		<title>Acme — Business Landing</title>
+		<meta name="description" content="Acme — professional product landing page template" />
 		<style>
 			:root{
-				--bg:#f7f8fb;
-				--card:#ffffff;
-				--accent:#2563eb;
+				--bg:#f4f6f9;
+				--surface:#ffffff;
+				--brand:#0f62fe;
+				--accent:#06b6d4;
 				--muted:#6b7280;
-				--radius:10px;
-				--max-width:1000px;
+				--text:#0b1220;
+				--radius:12px;
+				--max-width:1100px;
+				--glass: rgba(255,255,255,0.6);
 				font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 			}
 			*{box-sizing:border-box}
-			body{margin:0;background:var(--bg);color:#111;line-height:1.5}
-			.container{max-width:var(--max-width);margin:36px auto;padding:24px}
+			html,body{height:100%}
+			body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2f7);color:var(--text);-webkit-font-smoothing:antialiased}
+			.wrap{max-width:var(--max-width);margin:36px auto;padding:28px}
 			header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-			.brand{display:flex;align-items:center;gap:12px}
-			.logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
-			nav a{margin-left:14px;color:var(--muted);text-decoration:none}
-			.hero{margin-top:28px;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);padding:26px;border-radius:var(--radius);display:grid;grid-template-columns:1fr;gap:16px}
-			.hero h1{margin:0;font-size:1.6rem}
-			.hero p{margin:0;color:var(--muted)}
-			.cta{margin-top:12px}
-			.btn{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
-			.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
-			.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
-			footer{margin-top:22px;color:var(--muted);font-size:0.9rem;text-align:center}
-			@media(min-width:720px){.hero{grid-template-columns:1fr 320px}.hero h1{font-size:2rem}}
+			.brand{display:flex;align-items:center;gap:14px}
+			.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1.1rem}
+			nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
+			.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;margin-top:28px}
+			.hero-inner{background:var(--surface);padding:32px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(16,24,40,0.08);display:flex;gap:24px}
+			.hero-copy{flex:1}
+			h1{margin:0;font-size:1.9rem;line-height:1.05}
+			p.lead{color:var(--muted);margin-top:12px}
+			.controls{margin-top:18px;display:flex;gap:12px}
+			.btn{background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
+			.btn-ghost{background:transparent;border:2px solid #e6eefc;padding:8px 14px;border-radius:10px;color:var(--brand);font-weight:700}
+			.screenshot{width:320px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,var(--glass),transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
+			.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:22px}
+			.card{background:var(--surface);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
+			.testimonials{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px}
+			.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px}
+			footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
+			@media(min-width:880px){
+				.hero{grid-template-columns:1fr}
+				.hero-inner{display:grid;grid-template-columns:1fr 360px}
+				h1{font-size:2.2rem}
+			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
+		<div class="wrap">
 			<header>
 				<div class="brand">
-					<div class="logo" aria-hidden="true">G</div>
+					<div class="logo" aria-hidden="true">AC</div>
 					<div>
-						<div style="font-weight:700">My First Repo</div>
-						<div style="font-size:0.85rem;color:var(--muted)">A tiny demo page</div>
+						<div style="font-weight:800">Acme</div>
+						<div style="font-size:0.85rem;color:var(--muted)">Enterprise solutions</div>
 					</div>
 				</div>
-				<nav aria-label="Main navigation">
+				<nav aria-label="Main">
 					<a href="#features">Features</a>
-					<a href="#about">About</a>
+					<a href="#pricing">Pricing</a>
 					<a href="#contact">Contact</a>
 				</nav>
 			</header>
 
 			<main>
 				<section class="hero" aria-labelledby="hero-title">
-					<div>
-						<h1 id="hero-title">Welcome — a simple starter page</h1>
-						<p>Create, learn, and experiment with HTML, CSS and minimal JS. This template is small, accessible and responsive.</p>
-						<div class="cta">
-							<a class="btn" href="#features">See features</a>
+					<div class="hero-inner" role="region" aria-label="Hero">
+						<div class="hero-copy">
+							<h1 id="hero-title">Modern tools to run successful teams</h1>
+							<p class="lead">Acme helps teams ship faster with collaboration, observability and automation — trusted by growing companies.</p>
+							<div class="controls">
+								<a class="btn" href="#pricing">Get started</a>
+								<a class="btn-ghost" href="#features">Explore features</a>
+							</div>
+							<div style="margin-top:18px;color:var(--muted);font-size:0.95rem">Join thousands of teams saving time every week.</div>
+						</div>
+						<div class="screenshot" aria-hidden="true">
+							<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='200'><rect width='100%' height='100%' fill='%23eef7ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%230b1220' font-size='16'>App preview</text></svg>" alt="App preview" style="width:100%;height:auto;display:block" />
 						</div>
 					</div>
-					<div class="card" style="display:flex;flex-direction:column;gap:8px">
-						<strong>Quick Tips</strong>
-						<ul style="margin:0;padding-left:18px;color:var(--muted)">
-							<li>Keep markup semantic.</li>
-							<li>Use responsive units.</li>
-							<li>Test with keyboard navigation.</li>
-						</ul>
+				</section>
+
+				<section id="features" class="features" aria-label="Key features">
+					<div class="card">
+						<h3>Collaboration</h3>
+						<p style="color:var(--muted)">Real-time editing, comments and shared workflows to keep teams focused.</p>
+					</div>
+					<div class="card">
+						<h3>Automation</h3>
+						<p style="color:var(--muted)">Automate repetitive tasks and ship consistently with configurable pipelines.</p>
+					</div>
+					<div class="card">
+						<h3>Insights</h3>
+						<p style="color:var(--muted)">Usage and performance metrics to inform product decisions.</p>
 					</div>
 				</section>
 
-				<section id="features" class="features" aria-label="Features list">
-					<article class="card">
-						<h3>Accessible</h3>
-						<p style="color:var(--muted)">Semantic structure, clear focus order and readable contrast.</p>
-					</article>
-					<article class="card">
-						<h3>Responsive</h3>
-						<p style="color:var(--muted)">Fluid layout that adapts across devices with no external library.</p>
-					</article>
-					<article class="card">
-						<h3>Lightweight</h3>
-						<p style="color:var(--muted)">No build tools required — just open `index.html` in a browser.</p>
-					</article>
-				</section>
-
-				<section id="about" class="card" style="margin-top:18px">
-					<h3>About</h3>
-					<p style="color:var(--muted)">This repository contains a minimal starter page you can expand. Edit this file and commit your changes to experiment.</p>
-				</section>
-
-				<section id="contact" style="margin-top:16px">
+				<section class="testimonials" aria-label="Testimonials">
 					<div class="card">
-						<h3>Contact</h3>
-						<form onsubmit="handleSubmit(event)">
-							<label for="email">Email</label><br />
-							<input id="email" name="email" type="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #e6e9ef" />
-							<div style="margin-top:10px">
-								<button type="submit" class="btn">Subscribe</button>
+						<strong>“Acme reduced our release time by 40%.”</strong>
+						<div style="color:var(--muted);margin-top:8px">— Jordan Lee, CTO at Stellar</div>
+					</div>
+				</section>
+
+				<section id="pricing" aria-label="Pricing" style="margin-top:8px">
+					<h2 style="margin:0 0 10px 2px">Pricing</h2>
+					<div class="price-grid">
+						<div class="card">
+							<h4>Starter</h4>
+							<div style="font-weight:800;font-size:1.2rem">Free</div>
+							<p style="color:var(--muted)">For small teams and evaluation.</p>
+							<div style="margin-top:12px"><a class="btn" href="#contact">Sign up</a></div>
+						</div>
+						<div class="card">
+							<h4>Pro</h4>
+							<div style="font-weight:800;font-size:1.2rem">$29 / mo</div>
+							<p style="color:var(--muted)">Advanced features for scaling teams.</p>
+							<div style="margin-top:12px"><a class="btn" href="#contact">Start trial</a></div>
+						</div>
+						<div class="card">
+							<h4>Enterprise</h4>
+							<div style="font-weight:800;font-size:1.2rem">Custom</div>
+							<p style="color:var(--muted)">SLA, onboarding and dedicated support.</p>
+							<div style="margin-top:12px"><a class="btn" href="#contact">Contact sales</a></div>
+						</div>
+					</div>
+				</section>
+
+				<section id="contact" style="margin-top:20px">
+					<div class="card">
+						<h3>Contact sales</h3>
+						<p style="color:var(--muted)">Request a demo or ask about enterprise plans.</p>
+						<form onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:10px;margin-top:10px">
+							<input id="email" name="email" type="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #e6eefc" />
+							<input id="company" name="company" placeholder="Company (optional)" style="padding:10px;border-radius:8px;border:1px solid #e6eefc" />
+							<div style="display:flex;gap:10px">
+								<button class="btn" type="submit">Request demo</button>
+								<a class="btn-ghost" href="mailto:hello@acme.example">Email us</a>
 							</div>
 						</form>
-						<div id="msg" role="status" style="margin-top:10px;color:var(--muted)"></div>
+						<div id="msg" role="status" style="margin-top:8px;color:var(--muted)"></div>
 					</div>
 				</section>
 			</main>
 
 			<footer>
-				© "My First Repo" — Built for learning.
+				© Acme — Built for teams. <span style="color:var(--muted)">Privacy • Terms</span>
 			</footer>
 		</div>
 
@@ -113,8 +154,9 @@
 			function handleSubmit(e){
 				e.preventDefault();
 				const email = document.getElementById('email').value;
+				const company = document.getElementById('company').value;
 				const msg = document.getElementById('msg');
-				msg.textContent = `Thanks — ${email} has been recorded (demo).`;
+				msg.textContent = `Thanks — we'll reach out to ${email}${company?(' from '+company):''} soon.`;
 			}
 		</script>
 	</body>
