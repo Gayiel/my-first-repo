@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<title>My First Page</title>
+		<meta name="description" content="A simple, accessible demo page" />
+		<style>
+			:root{
+				--bg:#f7f8fb;
+				--card:#ffffff;
+				--accent:#2563eb;
+				--muted:#6b7280;
+				--radius:10px;
+				--max-width:1000px;
+				font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+			}
+			*{box-sizing:border-box}
+			body{margin:0;background:var(--bg);color:#111;line-height:1.5}
+			.container{max-width:var(--max-width);margin:36px auto;padding:24px}
+			header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+			.brand{display:flex;align-items:center;gap:12px}
+			.logo{width:44px;height:44px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700}
+			nav a{margin-left:14px;color:var(--muted);text-decoration:none}
+			.hero{margin-top:28px;background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);padding:26px;border-radius:var(--radius);display:grid;grid-template-columns:1fr;gap:16px}
+			.hero h1{margin:0;font-size:1.6rem}
+			.hero p{margin:0;color:var(--muted)}
+			.cta{margin-top:12px}
+			.btn{display:inline-block;padding:10px 16px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none}
+			.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+			.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+			footer{margin-top:22px;color:var(--muted);font-size:0.9rem;text-align:center}
+			@media(min-width:720px){.hero{grid-template-columns:1fr 320px}.hero h1{font-size:2rem}}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="brand">
+					<div class="logo" aria-hidden="true">G</div>
+					<div>
+						<div style="font-weight:700">My First Repo</div>
+						<div style="font-size:0.85rem;color:var(--muted)">A tiny demo page</div>
+					</div>
+				</div>
+				<nav aria-label="Main navigation">
+					<a href="#features">Features</a>
+					<a href="#about">About</a>
+					<a href="#contact">Contact</a>
+				</nav>
+			</header>
+
+			<main>
+				<section class="hero" aria-labelledby="hero-title">
+					<div>
+						<h1 id="hero-title">Welcome — a simple starter page</h1>
+						<p>Create, learn, and experiment with HTML, CSS and minimal JS. This template is small, accessible and responsive.</p>
+						<div class="cta">
+							<a class="btn" href="#features">See features</a>
+						</div>
+					</div>
+					<div class="card" style="display:flex;flex-direction:column;gap:8px">
+						<strong>Quick Tips</strong>
+						<ul style="margin:0;padding-left:18px;color:var(--muted)">
+							<li>Keep markup semantic.</li>
+							<li>Use responsive units.</li>
+							<li>Test with keyboard navigation.</li>
+						</ul>
+					</div>
+				</section>
+
+				<section id="features" class="features" aria-label="Features list">
+					<article class="card">
+						<h3>Accessible</h3>
+						<p style="color:var(--muted)">Semantic structure, clear focus order and readable contrast.</p>
+					</article>
+					<article class="card">
+						<h3>Responsive</h3>
+						<p style="color:var(--muted)">Fluid layout that adapts across devices with no external library.</p>
+					</article>
+					<article class="card">
+						<h3>Lightweight</h3>
+						<p style="color:var(--muted)">No build tools required — just open `index.html` in a browser.</p>
+					</article>
+				</section>
+
+				<section id="about" class="card" style="margin-top:18px">
+					<h3>About</h3>
+					<p style="color:var(--muted)">This repository contains a minimal starter page you can expand. Edit this file and commit your changes to experiment.</p>
+				</section>
+
+				<section id="contact" style="margin-top:16px">
+					<div class="card">
+						<h3>Contact</h3>
+						<form onsubmit="handleSubmit(event)">
+							<label for="email">Email</label><br />
+							<input id="email" name="email" type="email" required style="width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #e6e9ef" />
+							<div style="margin-top:10px">
+								<button type="submit" class="btn">Subscribe</button>
+							</div>
+						</form>
+						<div id="msg" role="status" style="margin-top:10px;color:var(--muted)"></div>
+					</div>
+				</section>
+			</main>
+
+			<footer>
+				© "My First Repo" — Built for learning.
+			</footer>
+		</div>
+
+		<script>
+			function handleSubmit(e){
+				e.preventDefault();
+				const email = document.getElementById('email').value;
+				const msg = document.getElementById('msg');
+				msg.textContent = `Thanks — ${email} has been recorded (demo).`;
+			}
+		</script>
+	</body>
+</html>
+
