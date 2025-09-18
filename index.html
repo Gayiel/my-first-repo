@@ -1,164 +1,292 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<title>Acme — Business Landing</title>
-		<meta name="description" content="Acme — professional product landing page template" />
-		<style>
-			:root{
-				--bg:#f4f6f9;
-				--surface:#ffffff;
-				--brand:#0f62fe;
-				--accent:#06b6d4;
-				--muted:#6b7280;
-				--text:#0b1220;
-				--radius:12px;
-				--max-width:1100px;
-				--glass: rgba(255,255,255,0.6);
-				font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-			}
-			*{box-sizing:border-box}
-			html,body{height:100%}
-			body{margin:0;background:linear-gradient(180deg,var(--bg),#eef2f7);color:var(--text);-webkit-font-smoothing:antialiased}
-			.wrap{max-width:var(--max-width);margin:36px auto;padding:28px}
-			header{display:flex;align-items:center;justify-content:space-between;gap:16px}
-			.brand{display:flex;align-items:center;gap:14px}
-			.logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--brand),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1.1rem}
-			nav a{margin-left:18px;color:var(--muted);text-decoration:none;font-weight:600}
-			.hero{display:grid;grid-template-columns:1fr;gap:20px;align-items:center;margin-top:28px}
-			.hero-inner{background:var(--surface);padding:32px;border-radius:var(--radius);box-shadow:0 10px 30px rgba(16,24,40,0.08);display:flex;gap:24px}
-			.hero-copy{flex:1}
-			h1{margin:0;font-size:1.9rem;line-height:1.05}
-			p.lead{color:var(--muted);margin-top:12px}
-			.controls{margin-top:18px;display:flex;gap:12px}
-			.btn{background:var(--brand);color:#fff;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700}
-			.btn-ghost{background:transparent;border:2px solid #e6eefc;padding:8px 14px;border-radius:10px;color:var(--brand);font-weight:700}
-			.screenshot{width:320px;border-radius:10px;overflow:hidden;background:linear-gradient(180deg,var(--glass),transparent);box-shadow:inset 0 1px 0 rgba(255,255,255,0.6)}
-			.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:22px}
-			.card{background:var(--surface);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(16,24,40,0.04)}
-			.testimonials{display:grid;grid-template-columns:1fr;gap:14px;margin-top:22px}
-			.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:20px}
-			footer{margin-top:28px;color:var(--muted);font-size:0.9rem;text-align:center}
-			@media(min-width:880px){
-				.hero{grid-template-columns:1fr}
-				.hero-inner{display:grid;grid-template-columns:1fr 360px}
-				h1{font-size:2.2rem}
-			}
-		</style>
-	</head>
-	<body>
-		<div class="wrap">
-			<header>
-				<div class="brand">
-					<div class="logo" aria-hidden="true">AC</div>
-					<div>
-						<div style="font-weight:800">Acme</div>
-						<div style="font-size:0.85rem;color:var(--muted)">Enterprise solutions</div>
-					</div>
-				</div>
-				<nav aria-label="Main">
-					<a href="#features">Features</a>
-					<a href="#pricing">Pricing</a>
-					<a href="#contact">Contact</a>
-				</nav>
-			</header>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamaliel Leguista - Healthcare Technology Professional</title>
+  <meta name="description" content="Gamaliel Leguista - Patient Service Representative, Computer Science Student, and Healthcare Technology Enthusiast from the Bronx, NY">
+  <meta name="keywords" content="Gamaliel Leguista, Patient Service Representative, Computer Science, Healthcare Technology, Bronx, Bilingual Professional">
+  <meta name="author" content="Gamaliel Leguista">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Gamaliel Leguista - Healthcare Technology Professional">
+  <meta property="og:description" content="Bridging healthcare and technology with bilingual expertise and passion for innovation">
+  <meta property="og:type" content="website">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🚀</text></svg>">
+</head>
+<body>
+  <!-- Loading Animation -->
+  <div id="loading-screen">
+    <div class="loader">
+      <div class="loader-ring"></div>
+      <div class="loader-text">Loading...</div>
+    </div>
+  </div>
 
-			<main>
-				<section class="hero" aria-labelledby="hero-title">
-					<div class="hero-inner" role="region" aria-label="Hero">
-						<div class="hero-copy">
-							<h1 id="hero-title">Modern tools to run successful teams</h1>
-							<p class="lead">Acme helps teams ship faster with collaboration, observability and automation — trusted by growing companies.</p>
-							<div class="controls">
-								<a class="btn" href="#pricing">Get started</a>
-								<a class="btn-ghost" href="#features">Explore features</a>
-							</div>
-							<div style="margin-top:18px;color:var(--muted);font-size:0.95rem">Join thousands of teams saving time every week.</div>
-						</div>
-						<div class="screenshot" aria-hidden="true">
-							<img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='320' height='200'><rect width='100%' height='100%' fill='%23eef7ff'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%230b1220' font-size='16'>App preview</text></svg>" alt="App preview" style="width:100%;height:auto;display:block" />
-						</div>
-					</div>
-				</section>
+  <!-- Floating Particles -->
+  <div class="particle" style="top: 20%; left: 20%;"></div>
+  <div class="particle" style="top: 60%; left: 80%;"></div>
+  <div class="particle" style="top: 80%; left: 30%;"></div>
 
-				<section id="features" class="features" aria-label="Key features">
-					<div class="card">
-						<h3>Collaboration</h3>
-						<p style="color:var(--muted)">Real-time editing, comments and shared workflows to keep teams focused.</p>
-					</div>
-					<div class="card">
-						<h3>Automation</h3>
-						<p style="color:var(--muted)">Automate repetitive tasks and ship consistently with configurable pipelines.</p>
-					</div>
-					<div class="card">
-						<h3>Insights</h3>
-						<p style="color:var(--muted)">Usage and performance metrics to inform product decisions.</p>
-					</div>
-				</section>
+  <!-- Header -->
+  <header>
+    <h1 id="greeting">Welcome!</h1>
+    <p class="subtitle">Gamaliel Leguista</p>
+    <p class="subtitle">Patient Service Representative | Computer Science Student | Bilingual Professional</p>
+    <div class="header-decoration"></div>
+  </header>
 
-				<section class="testimonials" aria-label="Testimonials">
-					<div class="card">
-						<strong>“Acme reduced our release time by 40%.”</strong>
-						<div style="color:var(--muted);margin-top:8px">— Jordan Lee, CTO at Stellar</div>
-					</div>
-				</section>
+  <!-- Navigation -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#skills">Skills</a>
+    <a href="#goals">Goals</a>
+    <a href="#social">Contact</a>
+  </nav>
 
-				<section id="pricing" aria-label="Pricing" style="margin-top:8px">
-					<h2 style="margin:0 0 10px 2px">Pricing</h2>
-					<div class="price-grid">
-						<div class="card">
-							<h4>Starter</h4>
-							<div style="font-weight:800;font-size:1.2rem">Free</div>
-							<p style="color:var(--muted)">For small teams and evaluation.</p>
-							<div style="margin-top:12px"><a class="btn" href="#contact">Sign up</a></div>
-						</div>
-						<div class="card">
-							<h4>Pro</h4>
-							<div style="font-weight:800;font-size:1.2rem">$29 / mo</div>
-							<p style="color:var(--muted)">Advanced features for scaling teams.</p>
-							<div style="margin-top:12px"><a class="btn" href="#contact">Start trial</a></div>
-						</div>
-						<div class="card">
-							<h4>Enterprise</h4>
-							<div style="font-weight:800;font-size:1.2rem">Custom</div>
-							<p style="color:var(--muted)">SLA, onboarding and dedicated support.</p>
-							<div style="margin-top:12px"><a class="btn" href="#contact">Contact sales</a></div>
-						</div>
-					</div>
-				</section>
+  <!-- About Section -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! My name is <strong>Gamaliel Leguista</strong>. I'm currently a <em>Patient Service Representative</em> at Vida Guidance Center and a Computer Science student at City College of New York with a minor in Psychology. Born and raised in the Bronx, I bring both a passion for healthcare and a drive to grow in technology.</p>
+    
+    <p>What makes me unique? I'm bilingual (English & Spanish), highly adaptable, and love connecting with people while bridging the gap between healthcare and technology. My diverse background allows me to communicate effectively with patients from various cultural backgrounds while leveraging technology to improve their experience.</p>
+    
+    <p>Outside of work and studies, I'm deeply family-oriented and actively engaged in volunteer efforts, including work with the <em>Light a Candle Foundation</em> in the Dominican Republic. I believe in giving back to the community and making a positive impact wherever I can.</p>
+    
+    <div class="card highlight-card">
+      <h3>🎯 What Drives Me</h3>
+      <p>I'm passionate about the intersection of healthcare and technology. My goal is to leverage my technical skills and healthcare experience to improve patient outcomes and streamline healthcare processes. I believe technology can make healthcare more accessible, efficient, and patient-centered.</p>
+    </div>
+  </section>
 
-				<section id="contact" style="margin-top:20px">
-					<div class="card">
-						<h3>Contact sales</h3>
-						<p style="color:var(--muted)">Request a demo or ask about enterprise plans.</p>
-						<form onsubmit="handleSubmit(event)" style="display:flex;flex-direction:column;gap:10px;margin-top:10px">
-							<input id="email" name="email" type="email" placeholder="Email" required style="padding:10px;border-radius:8px;border:1px solid #e6eefc" />
-							<input id="company" name="company" placeholder="Company (optional)" style="padding:10px;border-radius:8px;border:1px solid #e6eefc" />
-							<div style="display:flex;gap:10px">
-								<button class="btn" type="submit">Request demo</button>
-								<a class="btn-ghost" href="mailto:hello@acme.example">Email us</a>
-							</div>
-						</form>
-						<div id="msg" role="status" style="margin-top:8px;color:var(--muted)"></div>
-					</div>
-				</section>
-			</main>
+  <!-- Experience Section -->
+  <section id="experience">
+    <h2>Professional Experience</h2>
+    
+    <div class="card experience-card">
+      <div class="card-header">
+        <h3>🏥 Patient Service Representative</h3>
+        <span class="duration">2023 – Present</span>
+      </div>
+      <p class="company"><strong>Vida Guidance Center</strong></p>
+      <ul>
+        <li>Assist patients with scheduling appointments and managing medical records</li>
+        <li>Coordinate between patients, healthcare providers, and insurance companies</li>
+        <li>Provide bilingual support to ensure effective communication with Spanish-speaking patients</li>
+        <li>Utilize healthcare management software to maintain accurate patient information</li>
+        <li>Handle sensitive patient information with strict adherence to HIPAA compliance</li>
+      </ul>
+    </div>
 
-			<footer>
-				© Acme — Built for teams. <span style="color:var(--muted)">Privacy • Terms</span>
-			</footer>
-		</div>
+    <div class="card experience-card">
+      <div class="card-header">
+        <h3>🏃‍♂️ Customer Service Associate</h3>
+        <span class="duration">2019 – 2024</span>
+      </div>
+      <p class="company"><strong>Barry's NYC</strong></p>
+      <ul>
+        <li>Delivered exceptional customer service in a fast-paced fitness environment</li>
+        <li>Managed inventory systems and point-of-sale technology</li>
+        <li>Troubleshot technical issues with fitness equipment and booking systems</li>
+        <li>Built strong relationships with clients and provided personalized service</li>
+        <li>Collaborated with team members to ensure smooth daily operations</li>
+      </ul>
+    </div>
 
-		<script>
-			function handleSubmit(e){
-				e.preventDefault();
-				const email = document.getElementById('email').value;
-				const company = document.getElementById('company').value;
-				const msg = document.getElementById('msg');
-				msg.textContent = `Thanks — we'll reach out to ${email}${company?(' from '+company):''} soon.`;
-			}
-		</script>
-	</body>
+    <div class="card experience-card">
+      <div class="card-header">
+        <h3>📞 Technical Support Specialist</h3>
+        <span class="duration">2022 – 2023</span>
+      </div>
+      <p class="company"><strong>Teleperformance</strong></p>
+      <ul>
+        <li>Provided phone, chat, and email technical support for client services</li>
+        <li>Diagnosed and resolved software and hardware issues efficiently</li>
+        <li>Maintained high customer satisfaction ratings through effective problem-solving</li>
+        <li>Documented technical issues and solutions in knowledge management systems</li>
+        <li>Trained new team members on support protocols and best practices</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills & Expertise</h2>
+    <div class="skills">
+      <div class="card skill-card">
+        <h3>💻 Technical Skills</h3>
+        <div class="skill-grid">
+          <div class="skill-item">Microsoft Office Suite</div>
+          <div class="skill-item">Healthcare Management Systems</div>
+          <div class="skill-item">Zendesk & Support Platforms</div>
+          <div class="skill-item">Hardware/Software Troubleshooting</div>
+          <div class="skill-item">Database Management</div>
+          <div class="skill-item">Web Technologies</div>
+        </div>
+      </div>
+      
+      <div class="card skill-card">
+        <h3>🤝 Soft Skills</h3>
+        <div class="skill-grid">
+          <div class="skill-item">Bilingual Communication</div>
+          <div class="skill-item">Cross-cultural Competency</div>
+          <div class="skill-item">Problem-Solving</div>
+          <div class="skill-item">Team Leadership</div>
+          <div class="skill-item">Customer Service</div>
+          <div class="skill-item">Adaptability</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card certification-card">
+      <h3>🏆 Certifications & Education</h3>
+      <div class="cert-grid">
+        <div class="cert-item">
+          <strong>City College of New York</strong>
+          <span>Computer Science (in progress)</span>
+        </div>
+        <div class="cert-item">
+          <strong>Psychology Minor</strong>
+          <span>Understanding human behavior</span>
+        </div>
+        <div class="cert-item">
+          <strong>Google IT Support</strong>
+          <span>Currently pursuing</span>
+        </div>
+        <div class="cert-item">
+          <strong>CompTIA A+</strong>
+          <span>In progress</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Goals Section -->
+  <section id="goals">
+    <h2>Goals & Vision</h2>
+    <div class="goals">
+      <div class="card goal-card">
+        <h3>🎯 Career Objectives</h3>
+        <ul>
+          <li>Develop a career bridging healthcare and technology innovation</li>
+          <li>Complete Google IT and CompTIA+ certifications by end of 2025</li>
+          <li>Graduate with Computer Science degree and Psychology minor</li>
+          <li>Contribute to healthcare IT projects improving patient outcomes</li>
+          <li>Become a leader in healthcare technology implementation</li>
+          <li>Mentor others from underrepresented communities in tech</li>
+        </ul>
+      </div>
+      
+      <div class="card goal-card">
+        <h3>💡 Areas of Interest</h3>
+        <ul>
+          <li>Healthcare Information Systems & EHR</li>
+          <li>Telemedicine & Digital Health Platforms</li>
+          <li>Healthcare Data Analytics & Patient Insights</li>
+          <li>AI Applications in Healthcare</li>
+          <li>Healthcare Accessibility & Multilingual Support</li>
+          <li>Patient Experience Technology & UI/UX</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card interest-card">
+      <h3>🌟 Personal Interests</h3>
+      <div class="interest-grid">
+        <div class="interest-item">
+          <span class="interest-icon">🎵</span>
+          <div>
+            <strong>Music & Culture</strong>
+            <p>Bachata, merengue, salsa</p>
+          </div>
+        </div>
+        <div class="interest-item">
+          <span class="interest-icon">🎉</span>
+          <div>
+            <strong>Event Planning</strong>
+            <p>Creating memorable experiences</p>
+          </div>
+        </div>
+        <div class="interest-item">
+          <span class="interest-icon">🤝</span>
+          <div>
+            <strong>Community Service</strong>
+            <p>Light a Candle Foundation</p>
+          </div>
+        </div>
+        <div class="interest-item">
+          <span class="interest-icon">✈️</span>
+          <div>
+            <strong>Travel</strong>
+            <p>Cultural exchange & learning</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="social">
+    <h2>Let's Connect</h2>
+    <p class="section-intro">
+      I'm always interested in connecting with fellow professionals, potential collaborators, and anyone passionate about healthcare technology. Feel free to reach out!
+    </p>
+    
+    <ul class="social-links">
+      <li><a href="https://www.linkedin.com/in/gamaliel-leguista" target="_blank" rel="noopener noreferrer">🔗 LinkedIn</a></li>
+      <li><a href="https://github.com/gamaliel-leguista" target="_blank" rel="noopener noreferrer">💻 GitHub</a></li>
+      <li><a href="mailto:gamaleguista@gmail.com">📧 Email Me</a></li>
+    </ul>
+    
+    <button onclick="contactMe()" class="contact-btn">
+      Quick Contact 🚀
+    </button>
+
+    <div class="card contact-info-card">
+      <h3>📍 Location & Availability</h3>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Based in:</strong>
+          <span>Bronx, New York</span>
+        </div>
+        <div class="contact-item">
+          <strong>Open to:</strong>
+          <span>Remote, hybrid, and local NYC opportunities</span>
+        </div>
+        <div class="contact-item">
+          <strong>Interests:</strong>
+          <span>Healthcare IT, technical support, and healthcare technology roles</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <p>&copy; <span id="year">2024</span> Gamaliel Leguista | Bronx, NY</p>
+      <p class="footer-tagline">
+        Building bridges between healthcare and technology, one connection at a time.
+      </p>
+    </div>
+    <div class="footer-decoration"></div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTop" class="back-to-top" onclick="scrollToTop()">↑</button>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
 </html>
-
