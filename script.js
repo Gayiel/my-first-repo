@@ -1,32 +1,75 @@
-// Basic interactive behavior for the personal site
+document.addEventListener('DOMContentLoaded', () => {
 
-function contactMe(){
-  const email = prompt('Enter your email to contact me:');
-  if(email){
-    alert('Thanks! This is a demo — would contact ' + email);
-  }
-}
+    // --- Custom Cursor Logic ---
+    const cursor = document.querySelector('.custom-cursor');
+    const links = document.querySelectorAll('a, button, .play-btn, .gallery-grid img');
 
-function scrollToTop(){
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+    document.addEventListener('mousemove', e => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px) translate(-50%, -50%)`;
+    });
 
-// Loading screen: hide after DOM content loaded
-window.addEventListener('DOMContentLoaded', () => {
-  const loader = document.getElementById('loading-screen');
-  if(loader){
-    setTimeout(() => { loader.style.display = 'none'; }, 600);
-  }
-});
+    links.forEach(link => {
+        link.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+        link.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
 
-// Back-to-top button visibility
-window.addEventListener('scroll', () => {
-  const btn = document.getElementById('backToTop');
-  if(!btn) return;
-  if(window.scrollY > 200){ btn.style.display = 'block'; } else { btn.style.display = 'none'; }
-});
+    // --- Smooth Scrolling for Navigation ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
 
-// Simple accessibility: focus outline for keyboard users
-document.addEventListener('keydown', (e) => {
-  if(e.key === 'Tab') document.body.classList.add('show-focus');
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - document.querySelector('header').offsetHeight,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    // --- Section Fade-in on Scroll ---
+    const sections = document.querySelectorAll('section');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.2
+    };
+
+    const sectionObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+
+    // --- Audio Player Functionality (Frontend Only) ---
+    // This is a placeholder for a more advanced audio system.
+    // For a real-world application, you would load tracks dynamically from a server.
+    const audioPlayer = document.querySelector('.audio-player');
+    const playBtn = document.querySelector('.play-btn');
+
+    playBtn.addEventListener('click', () => {
+        // Here, you would toggle play/pause for an audio element.
+        // For example:
+        // const audio = new Audio('path/to/your/track.mp3');
+        // if (audio.paused) {
+        //     audio.play();
+        //     playBtn.innerHTML = '<svg ...> Pause Icon </svg>';
+        // } else {
+        //     audio.pause();
+        //     playBtn.innerHTML = '<svg ...> Play Icon </svg>';
+        // }
+
+        console.log("Play/Pause button clicked. Add your audio logic here!");
+    });
 });
